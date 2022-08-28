@@ -123,9 +123,13 @@ nav {
   position: fixed;
   top: 0;
   z-index: 11;
+}
+
+.window-scroll {
   backdrop-filter: blur(4px) saturate(101%);
-    -webkit-backdrop-filter: blur(4px) saturate(101%);
-    background-color: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(4px) saturate(101%);
+  background-color: rgba(255, 255, 255, 0.06);
+  transition: var(--transition);
 }
 
 .nav_container {
@@ -151,7 +155,7 @@ nav button {
 }
 
 .nav_menu a:hover {
-  color: var(--color-bg2);
+  color: var(--color-primary);
 }
 
 /* ========== HEADER ========== */
@@ -179,7 +183,8 @@ header {
 /* ========== CATEGORY ========== */
 .categories {
   background-color: var(--color-bg1);
-  margin-top: 10rem;
+  height: 36rem;
+  /* margin-top: 10rem; */
 }
 
 .categories h1 {
@@ -190,7 +195,6 @@ header {
 .categories_container {
   display: grid;
   grid-template-columns: 40% 60%;
-  /* gap: 4rem; */
 }
 
 .categories_left {
@@ -247,4 +251,169 @@ header {
 
 .category p {
   font-size: 0.85rem;
+}
+
+/* ========== POPULAR COURSES ========== */
+.courses {
+  margin-top: 10rem;
+}
+
+.courses_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.course {
+  background-color: var(--color-bg1);
+  text-align: center;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.course:hover {
+  background-color: transparent;
+  border-color: var(--color-primary);
+}
+
+.course_info {
+  padding: 2rem;
+}
+
+.course_info p {
+  margin: 1.2rem 0 2rem;
+  font-size: 0.9rem;
+}
+
+/* ========== FAQS ========== */
+.faqs {
+  background: var(--color-bg1);
+  box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
+}
+
+.faqs_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.faq {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  height: fit-content;
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.faq h4 {
+  font-size: 1rem;
+  line-height: 2.2;
+}
+
+.faq_icon {
+  align-self: flex-start;
+  font-size: 1.2rem;
+}
+
+.faq p {
+  margin-top: 0.8rem;
+  display: none;
+}
+
+.faq.open p {
+  display: block;
+}
+
+/* ========== TESTIMONIALS ========== */
+.testimonial_container {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.testimonial {
+  padding-top: 2rem;
+}
+
+.avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  border: 1rem solid var(--color-bg1);
+}
+
+.testimonial_info {
+  text-align: center;
+}
+
+.testimonial_body {
+  background-color: var(--color-primary);
+  padding: 2rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.testimonial_body::before {
+  content: "";
+  display: block;
+  background: linear-gradient(
+    135deg,
+    transparent,
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary)
+  );
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: 45%;
+  top: -1.5rem;
+  transform: rotate(45deg);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: var(--color-bg1);
+  padding-top: 5rem;
+  font-size: .9rem;
+}
+
+.footer_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+}
+
+.footer_container > div h4 {
+  margin-bottom: 1.2rem;
+}
+
+.footer1 p {
+  margin: 0 0 2rem;
+}
+
+footer ul li {
+  margin-bottom: .7rem;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer_socials {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.footer_copyright {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--color-bg2);
 }
